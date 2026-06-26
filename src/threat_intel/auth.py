@@ -20,7 +20,7 @@ from .config import get_app_password, get_session_secret
 logger = logging.getLogger("threat_intel.auth")
 
 COOKIE_NAME = "ti_session"
-SESSION_TTL_SECONDS = 7 * 24 * 3600  # 7 days
+SESSION_TTL_SECONDS = 3600  # 1 hour
 
 
 def auth_enabled() -> bool:
