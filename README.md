@@ -4,10 +4,6 @@ A Claude-powered agent that investigates Indicators of Compromise (IOCs) by
 querying threat-intelligence sources, cross-referencing findings, mapping them
 to MITRE ATT&CK, and producing a structured report.
 
-Based on the Anthropic cookbook
-[Tool Use: Threat Intel Enrichment Agent](https://platform.claude.com/cookbook/tool-use-threat-intel-enrichment-agent),
-restructured into a modular, testable package with a swappable data-source layer.
-
 ## How it works
 
 ```
