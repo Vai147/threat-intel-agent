@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Roboto:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: "Inter", system-ui, sans-serif; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 oklch(80% 0.13 195 / 0.4); } 70% { box-shadow: 0 0 0 8px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</helmet>
+
+<!-- ============ FRAME 1 : BEFORE ============ -->
+<div style="position:absolute; left:0px; top:0px; width:680px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#ef4444; color:#fff; font-size:12px;">!</span>
+    BEFORE — current console
+  </div>
+
+  <div style="border-radius:2px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; background:oklch(15% 0.02 260); background-image:linear-gradient(oklch(19% 0.02 260) 1px, transparent 1px), linear-gradient(90deg, oklch(19% 0.02 260) 1px, transparent 1px); background-size:44px 44px; color:oklch(94% 0.008 250);">
+    <div style="padding:28px 26px 26px;">
+
+      <!-- header -->
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:18px; padding-bottom:18px; border-bottom:1px solid oklch(34% 0.02 262);">
+        <div style="display:flex; align-items:center; gap:14px;">
+          <span style="font-family:'JetBrains Mono',monospace; font-size:1.5rem; color:oklch(80% 0.13 195); text-shadow:0 0 16px oklch(80% 0.13 195 / 0.18);">◢◤</span>
+          <div>
+            <h1 style="margin:0; font-size:1.15rem; letter-spacing:0.08em; font-weight:650;">THREAT&nbsp;INTEL&nbsp;CONSOLE</h1>
+            <p style="margin:2px 0 0; font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:oklch(55% 0.012 255); letter-spacing:0.04em;">claude-driven IOC enrichment agent</p>
+          </div>
+        </div>
+        <div style="display:inline-flex; background:oklch(20% 0.02 262); border:1px solid oklch(34% 0.02 262); border-radius:999px; padding:3px;">
+          <button style="background:oklch(28% 0.024 262); border:none; color:oklch(94% 0.008 250); padding:7px 15px; border-radius:999px; font:550 0.8rem 'Inter',sans-serif;">Investigate</button>
+          <button style="background:transparent; border:none; color:oklch(70% 0.012 252); padding:7px 15px; border-radius:999px; font:550 0.8rem 'Inter',sans-serif;">Live feed</button>
+        </div>
+      </div>
+
+      <!-- input row -->
+      <div style="display:flex; align-items:center; gap:12px; background:oklch(20% 0.02 262); border:1px solid oklch(44% 0.03 262); border-radius:10px; padding:11px 15px; margin-top:24px; box-shadow:0 0 0 1px oklch(80% 0.13 195 / 0.18), 0 0 24px oklch(80% 0.13 195 / 0.18);">
+        <span style="font-family:'JetBrains Mono',monospace; color:oklch(80% 0.13 195); font-size:1.1rem;">&gt;</span>
+        <span style="flex:1; font-family:'JetBrains Mono',monospace; font-size:0.92rem; color:oklch(94% 0.008 250);">secure-bankofamerica-login.com</span>
+        <span style="background:oklch(80% 0.13 195); color:oklch(20% 0.04 220); border-radius:6px; padding:6px 15px; font-weight:650; font-size:0.85rem;">Investigate</span>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; flex-wrap:wrap; font-size:0.82rem; color:oklch(70% 0.012 252); margin-top:11px;">
+        <span style="display:inline-flex; align-items:center; gap:7px;"><span style="width:13px; height:13px; border:1px solid oklch(44% 0.03 262); border-radius:3px; background:oklch(80% 0.13 195);"></span>auto-detect type</span>
+        <span style="background:oklch(24% 0.022 262); border:1px solid oklch(34% 0.02 262); border-radius:6px; padding:3px 9px; font-family:'JetBrains Mono',monospace;">domain</span>
+        <span style="display:inline-flex; margin-left:auto; border:1px solid oklch(34% 0.02 262); border-radius:999px; overflow:hidden; font-family:'JetBrains Mono',monospace; font-size:0.7rem;">
+          <span style="padding:4px 13px; color:oklch(55% 0.012 255);">mock</span>
+          <span style="padding:4px 13px; background:oklch(80% 0.13 195 / 0.18); color:oklch(80% 0.13 195);">live</span>
+        </span>
+      </div>
+
+      <!-- agent trace -->
+      <div style="background:oklch(20% 0.02 262); border:1px solid oklch(34% 0.02 262); border-radius:10px; padding:16px 22px; margin-top:24px;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.7rem; letter-spacing:0.1em; text-transform:uppercase; color:oklch(55% 0.012 255); margin-bottom:12px;">
+          <span style="width:8px; height:8px; border-radius:999px; background:oklch(80% 0.13 195); animation:pulse 1.4s infinite;"></span>
+          <span style="font-family:'JetBrains Mono',monospace;">agent trace</span>
+        </div>
+        <ul style="list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:8px; font-family:'JetBrains Mono',monospace; font-size:0.82rem;">
+          <li style="display:flex; gap:12px;"><span style="color:oklch(80% 0.13 195); min-width:9rem;">whois_lookup</span><span style="color:oklch(70% 0.012 252);">secure-bankofamerica-login.com</span></li>
+          <li style="display:flex; gap:12px;"><span style="color:oklch(80% 0.13 195); min-width:9rem;">reputation_check</span><span style="color:oklch(70% 0.012 252);">VirusTotal · ThreatFox</span></li>
+          <li style="display:flex; gap:12px;"><span style="color:oklch(80% 0.13 195); min-width:9rem;">map_mitre</span><span style="color:oklch(70% 0.012 252);">phishing tactics</span></li>
+          <li><span style="color:oklch(80% 0.13 195); animation:blink 1s steps(2) infinite;">▌</span></li>
+        </ul>
+      </div>
+
+      <!-- hero card -->
+      <div style="border:1px solid oklch(44% 0.03 262); border-radius:10px; padding:22px; margin-top:24px; background:linear-gradient(180deg, oklch(24% 0.022 262), oklch(20% 0.02 262)); box-shadow:0 1px 0 oklch(100% 0 0 / 0.03) inset, 0 8px 24px oklch(0% 0 0 / 0.35);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px;">
+          <div>
+            <div style="font-family:'JetBrains Mono',monospace; font-size:1.15rem; word-break:break-all;">secure-bankofamerica-login.com</div>
+            <div style="color:oklch(55% 0.012 255); font-size:0.85rem; margin-top:4px;">Domain</div>
+          </div>
+          <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; border:1px solid oklch(64% 0.23 25); background:color-mix(in oklch, oklch(64% 0.23 25) 14%, transparent);">
+            <span style="width:9px; height:9px; border-radius:999px; background:oklch(64% 0.23 25); box-shadow:0 0 8px oklch(64% 0.23 25);"></span>
+            <span style="color:oklch(64% 0.23 25); font-weight:700; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.04em;">critical</span>
+            <span style="color:oklch(70% 0.012 252); font-size:0.7rem; font-family:'JetBrains Mono',monospace;">92% conf</span>
+          </div>
+        </div>
+        <span style="display:inline-flex; margin-top:14px; padding:0.2em 0.6em; border-radius:999px; font-size:0.7rem; font-weight:550; border:1px solid oklch(72% 0.2 55); color:oklch(72% 0.2 55); background:oklch(72% 0.2 55 / 0.12);">Credential Phishing</span>
+        <p style="margin:14px 0 0; color:oklch(70% 0.012 252); line-height:1.65; font-size:0.9rem;">Newly registered domain impersonating Bank of America. Hosts a credential-harvesting login page behind Cloudflare; TLS certificate issued 3 days ago. Linked to an active Emotet distribution cluster and matches TA577 phishing infrastructure.</p>
+      </div>
+
+      <!-- grid of cards -->
+      <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:18px;">
+        <div style="grid-column:1 / -1; background:oklch(20% 0.02 262); border:1px solid oklch(34% 0.02 262); border-radius:10px; padding:22px; box-shadow:0 1px 0 oklch(100% 0 0 / 0.03) inset, 0 8px 24px oklch(0% 0 0 / 0.35);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:oklch(55% 0.012 255); margin-bottom:16px;">MITRE ATT&amp;CK</div>
+          <table style="width:100%; border-collapse:collapse; font-size:0.82rem;">
+            <thead><tr>
+              <th style="text-align:left; color:oklch(55% 0.012 255); font-weight:550; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; padding:0 12px 8px; border-bottom:1px solid oklch(34% 0.02 262);">ID</th>
+              <th style="text-align:left; color:oklch(55% 0.012 255); font-weight:550; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; padding:0 12px 8px; border-bottom:1px solid oklch(34% 0.02 262);">Technique</th>
+              <th style="text-align:left; color:oklch(55% 0.012 255); font-weight:550; font-size:0.7rem; text-transform:uppercase; letter-spacing:0.08em; padding:0 12px 8px; border-bottom:1px solid oklch(34% 0.02 262);">Tactic</th>
+            </tr></thead>
+            <tbody>
+              <tr><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262); font-family:'JetBrains Mono',monospace; color:oklch(80% 0.13 195);">T1566.002</td><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262);">Spearphishing Link</td><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262); color:oklch(55% 0.012 255);">Initial Access</td></tr>
+              <tr><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262); font-family:'JetBrains Mono',monospace; color:oklch(80% 0.13 195);">T1598.003</td><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262);">Spearphishing Link</td><td style="padding:8px 12px; border-bottom:1px solid oklch(34% 0.02 262); color:oklch(55% 0.012 255);">Reconnaissance</td></tr>
+              <tr><td style="padding:8px 12px; font-family:'JetBrains Mono',monospace; color:oklch(80% 0.13 195);">T1056.003</td><td style="padding:8px 12px;">Web Portal Capture</td><td style="padding:8px 12px; color:oklch(55% 0.012 255);">Collection</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="background:oklch(20% 0.02 262); border:1px solid oklch(34% 0.02 262); border-radius:10px; padding:22px; box-shadow:0 1px 0 oklch(100% 0 0 / 0.03) inset, 0 8px 24px oklch(0% 0 0 / 0.35);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:oklch(55% 0.012 255); margin-bottom:16px;">Related malware</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:0.2em 0.6em; border-radius:999px; font-size:0.7rem; border:1px solid oklch(72% 0.2 55); color:oklch(72% 0.2 55); background:oklch(72% 0.2 55 / 0.12);">Emotet</span>
+            <span style="padding:0.2em 0.6em; border-radius:999px; font-size:0.7rem; border:1px solid oklch(72% 0.2 55); color:oklch(72% 0.2 55); background:oklch(72% 0.2 55 / 0.12);">IcedID</span>
+          </div>
+        </div>
+        <div style="background:oklch(20% 0.02 262); border:1px solid oklch(34% 0.02 262); border-radius:10px; padding:22px; box-shadow:0 1px 0 oklch(100% 0 0 / 0.03) inset, 0 8px 24px oklch(0% 0 0 / 0.35);">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:oklch(55% 0.012 255); margin-bottom:16px;">Threat groups</div>
+          <div style="display:flex; flex-wrap:wrap; gap:8px;">
+            <span style="padding:0.2em 0.6em; border-radius:999px; font-size:0.7rem; border:1px solid oklch(62% 0.1 197); color:oklch(80% 0.13 195); background:oklch(80% 0.13 195 / 0.18);">TA577</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div style="border-top:1px solid oklch(34% 0.02 262); padding-top:16px; margin-top:24px; font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:oklch(55% 0.012 255); letter-spacing:0.04em;">sources: VirusTotal · AbuseIPDB · abuse.ch ThreatFox · MITRE ATT&amp;CK</div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME 2 : AFTER ============ -->
+<div style="position:absolute; left:760px; top:0px; width:680px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#16a34a; color:#fff; font-size:13px;">✓</span>
+    AFTER — cleaned up
+  </div>
+
+  <div style="border-radius:2px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; background:oklch(18% 0.008 260); color:oklch(95% 0.004 250);">
+    <div style="padding:34px 36px 30px;">
+
+      <!-- header: quiet wordmark + text tabs -->
+      <div style="display:flex; justify-content:space-between; align-items:center; gap:18px;">
+        <div style="display:flex; align-items:baseline; gap:10px;">
+          <span style="font-size:1.02rem; font-weight:600; letter-spacing:-0.01em;">Threat Intel</span>
+          <span style="font-size:0.82rem; color:oklch(52% 0.006 255);">IOC enrichment</span>
+        </div>
+        <div style="display:flex; gap:22px; font-size:0.85rem;">
+          <span style="color:oklch(95% 0.004 250); font-weight:500; padding-bottom:4px; border-bottom:2px solid oklch(78% 0.09 200);">Investigate</span>
+          <span style="color:oklch(58% 0.008 255); padding-bottom:4px;">Live feed</span>
+        </div>
+      </div>
+
+      <!-- input: single calm field -->
+      <div style="display:flex; align-items:center; gap:12px; background:oklch(22% 0.006 260); border:1px solid oklch(30% 0.006 260); border-radius:9px; padding:12px 16px; margin-top:30px;">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:0.95rem; word-break:break-all; flex:1; color:oklch(95% 0.004 250);">secure-bankofamerica-login.com</span>
+        <span style="color:oklch(52% 0.006 255); font-size:0.78rem;">domain · live</span>
+        <span style="background:oklch(78% 0.09 200); color:oklch(20% 0.03 220); border-radius:7px; padding:7px 16px; font-weight:600; font-size:0.85rem;">Investigate</span>
+      </div>
+
+      <!-- verdict: one clear block -->
+      <div style="margin-top:34px;">
+        <div style="display:flex; align-items:center; gap:10px; color:oklch(66% 0.17 25); font-size:0.78rem; font-weight:600; letter-spacing:0.02em;">
+          <span style="width:8px; height:8px; border-radius:999px; background:oklch(66% 0.17 25);"></span>
+          CRITICAL
+          <span style="color:oklch(58% 0.008 255); font-weight:400;">· 92% confidence · credential phishing</span>
+        </div>
+        <p style="margin:16px 0 0; font-size:1.08rem; line-height:1.6; color:oklch(88% 0.005 250); max-width:56ch; text-wrap:pretty;">Newly registered domain impersonating Bank of America, hosting a credential-harvesting login page behind Cloudflare. The certificate was issued three days ago, and the infrastructure matches an active Emotet cluster tied to TA577.</p>
+      </div>
+
+      <!-- MITRE: airy table, no box -->
+      <div style="margin-top:32px; padding-top:26px; border-top:1px solid oklch(28% 0.006 260);">
+        <div style="font-size:0.8rem; color:oklch(60% 0.008 255); margin-bottom:14px;">MITRE ATT&amp;CK</div>
+        <table style="width:100%; border-collapse:collapse; font-size:0.9rem;">
+          <tbody>
+            <tr><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260); font-family:'JetBrains Mono',monospace; color:oklch(78% 0.09 200); width:6.5rem;">T1566.002</td><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260);">Spearphishing Link</td><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260); color:oklch(58% 0.008 255); text-align:right;">Initial Access</td></tr>
+            <tr><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260); font-family:'JetBrains Mono',monospace; color:oklch(78% 0.09 200);">T1598.003</td><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260);">Spearphishing Link</td><td style="padding:11px 0; border-bottom:1px solid oklch(26% 0.006 260); color:oklch(58% 0.008 255); text-align:right;">Reconnaissance</td></tr>
+            <tr><td style="padding:11px 0; font-family:'JetBrains Mono',monospace; color:oklch(78% 0.09 200);">T1056.003</td><td style="padding:11px 0;">Web Portal Capture</td><td style="padding:11px 0; color:oklch(58% 0.008 255); text-align:right;">Collection</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- actions -->
+      <div style="margin-top:32px; padding-top:26px; border-top:1px solid oklch(28% 0.006 260);">
+        <div style="font-size:0.8rem; color:oklch(60% 0.008 255); margin-bottom:16px;">Recommended actions</div>
+        <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:13px; counter-reset:a;">
+          <li style="display:flex; gap:14px; align-items:baseline; line-height:1.5; color:oklch(85% 0.005 250); font-size:0.95rem;"><span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:oklch(52% 0.006 255);">01</span>Block the domain at the DNS and proxy layer</li>
+          <li style="display:flex; gap:14px; align-items:baseline; line-height:1.5; color:oklch(85% 0.005 250); font-size:0.95rem;"><span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:oklch(52% 0.006 255);">02</span>Reset credentials for any users who submitted them</li>
+          <li style="display:flex; gap:14px; align-items:baseline; line-height:1.5; color:oklch(85% 0.005 250); font-size:0.95rem;"><span style="font-family:'JetBrains Mono',monospace; font-size:0.78rem; color:oklch(52% 0.006 255);">03</span>Hunt for related Emotet indicators across mail logs</li>
+        </ol>
+      </div>
+
+      <!-- related: quiet inline meta -->
+      <div style="margin-top:32px; padding-top:26px; border-top:1px solid oklch(28% 0.006 260); display:grid; grid-template-columns:repeat(2,1fr); gap:24px;">
+        <div>
+          <div style="font-size:0.8rem; color:oklch(60% 0.008 255); margin-bottom:10px;">Related malware</div>
+          <div style="font-size:0.92rem; color:oklch(85% 0.005 250);">Emotet, IcedID</div>
+        </div>
+        <div>
+          <div style="font-size:0.8rem; color:oklch(60% 0.008 255); margin-bottom:10px;">Threat group</div>
+          <div style="font-size:0.92rem; color:oklch(85% 0.005 250);">TA577</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME 3 : FIXES ============ -->
+<div style="position:absolute; left:1520px; top:0px; width:440px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#2563eb; color:#fff; font-size:13px;">↻</span>
+    WHAT CHANGED — 7 fixes
+  </div>
+
+  <div style="border-radius:2px; box-shadow:0 1px 3px rgba(0,0,0,.12); background:#fff; color:#27272a; padding:30px 30px 26px; font-size:0.92rem; line-height:1.5;">
+    <div style="display:flex; flex-direction:column; gap:20px;">
+
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">01</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Drop the grid background</div><span style="color:#71717a;">The 44px grid texture fights everything on top of it. A flat surface lets content breathe.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">02</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Kill the glows &amp; gradients</div><span style="color:#71717a;">Remove text-shadow, the focus glow ring, gradient cards and the shadow-card stack. Use one hairline border instead.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">03</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Flatten the surface layers</div><span style="color:#71717a;">Three stacked tones (surface / 2 / 3) plus cards-in-a-grid create boxes inside boxes. Separate sections with whitespace and thin rules.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">04</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Reserve monospace for data</div><span style="color:#71717a;">Mono + UPPERCASE + letter-spacing on every label reads as noise. Keep mono for IOCs, hashes and IDs only; labels go sentence-case sans.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">05</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">One calm verdict line</div><span style="color:#71717a;">Replace the glowing severity pill with a small dot + word + confidence. Lead with the summary at a readable size.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">06</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Mute the accent &amp; severity colors</div><span style="color:#71717a;">High-chroma cyan and 5 saturated severity hues compete for attention. Lower the chroma; let red mean critical and nothing else shout.</span></div>
+      </div>
+      <div style="display:flex; gap:14px;">
+        <span style="font-family:'JetBrains Mono',monospace; color:#a1a1aa; font-size:0.8rem; padding-top:1px;">07</span>
+        <div><div style="font-weight:600; margin-bottom:3px;">Calm the motion</div><span style="color:#71717a;">Drop the blinking cursor and pulsing dot from the persistent report view. Reserve animation for the moment the agent is actively running.</span></div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ============ FRAME 4 : ENTERPRISE PLATFORM STYLE ============ -->
+<div style="position:absolute; left:0px; top:1260px; width:1200px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#7c3aed; color:#fff; font-size:13px;">▤</span>
+    ENTERPRISE PLATFORM — light, Material-style, original (inspired by SecOps-class tools)
+  </div>
+
+  <div style="border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.12); overflow:hidden; background:#fff; color:#202124; font-family:'Roboto','Inter',system-ui,sans-serif;">
+
+    <!-- app bar -->
+    <div style="display:flex; align-items:center; gap:18px; height:60px; padding:0 22px; border-bottom:1px solid #e8eaed; background:#fff;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:7px; background:#1a73e8; color:#fff; font-weight:600; font-size:14px;">TI</span>
+        <span style="font-size:1.05rem; font-weight:500; color:#3c4043;">Threat Intel</span>
+      </div>
+      <div style="flex:1; max-width:520px; display:flex; align-items:center; gap:10px; background:#f1f3f4; border-radius:8px; padding:9px 14px; color:#5f6368; font-size:0.9rem;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#5f6368" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="14.5" y2="14.5"></line></svg>
+        Search indicators, reports, detections
+      </div>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:16px;">
+        <span style="font-size:0.85rem; color:#5f6368;">SOC · Tier 2</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:#e8f0fe; color:#1a73e8; font-weight:600; font-size:0.85rem;">AK</span>
+      </div>
+    </div>
+
+    <div style="display:flex; min-height:620px;">
+
+      <!-- left nav rail -->
+      <nav style="width:230px; flex-shrink:0; border-right:1px solid #e8eaed; padding:16px 12px; background:#fff;">
+        <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#80868b; padding:6px 14px 10px;">Operations</div>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#3c4043; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#5f6368" stroke-width="1.5"><rect x="2" y="2" width="6" height="6" rx="1"></rect><rect x="10" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="10" width="6" height="6" rx="1"></rect><rect x="10" y="10" width="6" height="6" rx="1"></rect></svg>Dashboard</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; background:#e8f0fe; color:#1a73e8; font-weight:500; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#1a73e8" stroke-width="1.6"><circle cx="8" cy="8" r="5"></circle><line x1="12" y1="12" x2="16" y2="16"></line></svg>Investigate</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#3c4043; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#5f6368" stroke-width="1.5"><line x1="3" y1="5" x2="15" y2="5"></line><line x1="3" y1="9" x2="15" y2="9"></line><line x1="3" y1="13" x2="11" y2="13"></line></svg>Live feed</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#3c4043; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#5f6368" stroke-width="1.5"><path d="M9 2 L16 15 L2 15 Z"></path><line x1="9" y1="7" x2="9" y2="11"></line></svg>Detections</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#3c4043; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#5f6368" stroke-width="1.5"><rect x="3" y="3" width="12" height="12" rx="2"></rect><line x1="6" y1="7" x2="12" y2="7"></line><line x1="6" y1="11" x2="10" y2="11"></line></svg>Rules</div>
+        </div>
+      </nav>
+
+      <!-- content -->
+      <div style="flex:1; background:#f8f9fa; padding:24px 28px 30px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:#5f6368; margin-bottom:6px;">Investigate<span style="color:#bdc1c6;">/</span><span style="color:#3c4043;">Report</span></div>
+        <h1 style="margin:0 0 20px; font-size:1.4rem; font-weight:500; color:#202124; letter-spacing:-0.01em;">Investigation report</h1>
+
+        <div style="display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start;">
+
+          <!-- main column -->
+          <div style="display:flex; flex-direction:column; gap:18px; min-width:0;">
+
+            <!-- verdict card -->
+            <div style="background:#fff; border:1px solid #e8eaed; border-radius:8px; padding:22px 24px; box-shadow:0 1px 2px rgba(60,64,67,.1);">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+                <div style="min-width:0;">
+                  <div style="font-family:'Roboto Mono',monospace; font-size:1.18rem; color:#202124; word-break:break-all;">secure-bankofamerica-login.com</div>
+                  <div style="color:#5f6368; font-size:0.85rem; margin-top:5px;">Domain · first seen 3 days ago</div>
+                </div>
+                <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; border-radius:999px; background:#fce8e6; color:#c5221f; font-size:0.8rem; font-weight:500;"><span style="width:7px; height:7px; border-radius:999px; background:#d93025;"></span>Critical</span>
+              </div>
+              <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                <span style="padding:5px 11px; border-radius:6px; background:#f1f3f4; color:#3c4043; font-size:0.8rem;">Credential phishing</span>
+                <span style="padding:5px 11px; border-radius:6px; background:#f1f3f4; color:#3c4043; font-size:0.8rem;">Confidence 92%</span>
+                <span style="padding:5px 11px; border-radius:6px; background:#f1f3f4; color:#3c4043; font-size:0.8rem;">Source: ThreatFox · VirusTotal</span>
+              </div>
+              <p style="margin:18px 0 0; color:#3c4043; line-height:1.6; font-size:0.95rem; text-wrap:pretty;">Newly registered domain impersonating Bank of America, hosting a credential-harvesting login page behind Cloudflare. The certificate was issued three days ago, and the infrastructure matches an active Emotet cluster tied to TA577.</p>
+            </div>
+
+            <!-- mitre card -->
+            <div style="background:#fff; border:1px solid #e8eaed; border-radius:8px; box-shadow:0 1px 2px rgba(60,64,67,.1); overflow:hidden;">
+              <div style="padding:16px 24px; border-bottom:1px solid #e8eaed; font-size:0.95rem; font-weight:500; color:#202124;">MITRE ATT&amp;CK techniques</div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+                <thead><tr style="background:#f8f9fa;">
+                  <th style="text-align:left; padding:10px 24px; color:#5f6368; font-weight:500; font-size:0.78rem;">Technique ID</th>
+                  <th style="text-align:left; padding:10px 24px; color:#5f6368; font-weight:500; font-size:0.78rem;">Name</th>
+                  <th style="text-align:left; padding:10px 24px; color:#5f6368; font-weight:500; font-size:0.78rem;">Tactic</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #f1f3f4; font-family:'Roboto Mono',monospace; color:#1a73e8;">T1566.002</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#3c4043;">Spearphishing Link</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#5f6368;">Initial Access</td></tr>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #f1f3f4; font-family:'Roboto Mono',monospace; color:#1a73e8;">T1598.003</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#3c4043;">Spearphishing Link</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#5f6368;">Reconnaissance</td></tr>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #f1f3f4; font-family:'Roboto Mono',monospace; color:#1a73e8;">T1056.003</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#3c4043;">Web Portal Capture</td><td style="padding:13px 24px; border-top:1px solid #f1f3f4; color:#5f6368;">Collection</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- side column -->
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div style="background:#fff; border:1px solid #e8eaed; border-radius:8px; padding:20px 22px; box-shadow:0 1px 2px rgba(60,64,67,.1);">
+              <div style="font-size:0.9rem; font-weight:500; color:#202124; margin-bottom:14px;">Recommended actions</div>
+              <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;">
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#3c4043; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">01</span>Block the domain at the DNS and proxy layer</li>
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#3c4043; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">02</span>Reset credentials for affected users</li>
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#3c4043; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">03</span>Hunt for related Emotet indicators</li>
+              </ol>
+            </div>
+            <div style="background:#fff; border:1px solid #e8eaed; border-radius:8px; padding:20px 22px; box-shadow:0 1px 2px rgba(60,64,67,.1);">
+              <div style="font-size:0.78rem; color:#5f6368; margin-bottom:8px;">Related malware</div>
+              <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px;">
+                <span style="padding:4px 10px; border-radius:6px; background:#fce8e6; color:#c5221f; font-size:0.8rem;">Emotet</span>
+                <span style="padding:4px 10px; border-radius:6px; background:#fce8e6; color:#c5221f; font-size:0.8rem;">IcedID</span>
+              </div>
+              <div style="font-size:0.78rem; color:#5f6368; margin-bottom:8px;">Threat group</div>
+              <span style="padding:4px 10px; border-radius:6px; background:#e8f0fe; color:#1a73e8; font-size:0.8rem;">TA577</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME 5 : ENTERPRISE PLATFORM — DARK ============ -->
+<div style="position:absolute; left:0px; top:2160px; width:1200px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#202124; color:#8ab4f8; font-size:13px; border:1px solid #3c4043;">▤</span>
+    ENTERPRISE PLATFORM — dark, Material-style, original
+  </div>
+
+  <div style="border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.3); overflow:hidden; background:#202124; color:#e8eaed; font-family:'Roboto','Inter',system-ui,sans-serif;">
+
+    <!-- app bar -->
+    <div style="display:flex; align-items:center; gap:18px; height:60px; padding:0 22px; border-bottom:1px solid #3c4043; background:#2d2e31;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:7px; background:#8ab4f8; color:#202124; font-weight:600; font-size:14px;">TI</span>
+        <span style="font-size:1.05rem; font-weight:500; color:#e8eaed;">Threat Intel</span>
+      </div>
+      <div style="flex:1; max-width:520px; display:flex; align-items:center; gap:10px; background:#3c4043; border-radius:8px; padding:9px 14px; color:#9aa0a6; font-size:0.9rem;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#9aa0a6" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="14.5" y2="14.5"></line></svg>
+        Search indicators, reports, detections
+      </div>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:16px;">
+        <span style="font-size:0.85rem; color:#9aa0a6;">SOC · Tier 2</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:rgba(138,180,248,.2); color:#8ab4f8; font-weight:600; font-size:0.85rem;">AK</span>
+      </div>
+    </div>
+
+    <div style="display:flex; min-height:620px;">
+
+      <!-- left nav rail -->
+      <nav style="width:230px; flex-shrink:0; border-right:1px solid #3c4043; padding:16px 12px; background:#2d2e31;">
+        <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#80868b; padding:6px 14px 10px;">Operations</div>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><rect x="2" y="2" width="6" height="6" rx="1"></rect><rect x="10" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="10" width="6" height="6" rx="1"></rect><rect x="10" y="10" width="6" height="6" rx="1"></rect></svg>Dashboard</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; background:rgba(138,180,248,.16); color:#8ab4f8; font-weight:500; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#8ab4f8" stroke-width="1.6"><circle cx="8" cy="8" r="5"></circle><line x1="12" y1="12" x2="16" y2="16"></line></svg>Investigate</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><line x1="3" y1="5" x2="15" y2="5"></line><line x1="3" y1="9" x2="15" y2="9"></line><line x1="3" y1="13" x2="11" y2="13"></line></svg>Live feed</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><path d="M9 2 L16 15 L2 15 Z"></path><line x1="9" y1="7" x2="9" y2="11"></line></svg>Detections</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><rect x="3" y="3" width="12" height="12" rx="2"></rect><line x1="6" y1="7" x2="12" y2="7"></line><line x1="6" y1="11" x2="10" y2="11"></line></svg>Rules</div>
+        </div>
+      </nav>
+
+      <!-- content -->
+      <div style="flex:1; background:#202124; padding:24px 28px 30px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:#9aa0a6; margin-bottom:6px;">Investigate<span style="color:#5f6368;">/</span><span style="color:#e8eaed;">Report</span></div>
+        <h1 style="margin:0 0 20px; font-size:1.4rem; font-weight:500; color:#e8eaed; letter-spacing:-0.01em;">Investigation report</h1>
+
+        <div style="display:grid; grid-template-columns:1fr 320px; gap:18px; align-items:start;">
+
+          <!-- main column -->
+          <div style="display:flex; flex-direction:column; gap:18px; min-width:0;">
+
+            <!-- verdict card -->
+            <div style="background:#2d2e31; border:1px solid #3c4043; border-radius:8px; padding:22px 24px;">
+              <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:16px; flex-wrap:wrap;">
+                <div style="min-width:0;">
+                  <div style="font-family:'Roboto Mono',monospace; font-size:1.18rem; color:#e8eaed; word-break:break-all;">secure-bankofamerica-login.com</div>
+                  <div style="color:#9aa0a6; font-size:0.85rem; margin-top:5px;">Domain · first seen 3 days ago</div>
+                </div>
+                <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; border-radius:999px; background:rgba(242,139,130,.16); color:#f28b82; font-size:0.8rem; font-weight:500;"><span style="width:7px; height:7px; border-radius:999px; background:#f28b82;"></span>Critical</span>
+              </div>
+              <div style="display:flex; gap:10px; margin-top:16px; flex-wrap:wrap;">
+                <span style="padding:5px 11px; border-radius:6px; background:#3c4043; color:#bdc1c6; font-size:0.8rem;">Credential phishing</span>
+                <span style="padding:5px 11px; border-radius:6px; background:#3c4043; color:#bdc1c6; font-size:0.8rem;">Confidence 92%</span>
+                <span style="padding:5px 11px; border-radius:6px; background:#3c4043; color:#bdc1c6; font-size:0.8rem;">Source: ThreatFox · VirusTotal</span>
+              </div>
+              <p style="margin:18px 0 0; color:#bdc1c6; line-height:1.6; font-size:0.95rem; text-wrap:pretty;">Newly registered domain impersonating Bank of America, hosting a credential-harvesting login page behind Cloudflare. The certificate was issued three days ago, and the infrastructure matches an active Emotet cluster tied to TA577.</p>
+            </div>
+
+            <!-- mitre card -->
+            <div style="background:#2d2e31; border:1px solid #3c4043; border-radius:8px; overflow:hidden;">
+              <div style="padding:16px 24px; border-bottom:1px solid #3c4043; font-size:0.95rem; font-weight:500; color:#e8eaed;">MITRE ATT&amp;CK techniques</div>
+              <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+                <thead><tr style="background:#292a2d;">
+                  <th style="text-align:left; padding:10px 24px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Technique ID</th>
+                  <th style="text-align:left; padding:10px 24px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Name</th>
+                  <th style="text-align:left; padding:10px 24px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Tactic</th>
+                </tr></thead>
+                <tbody>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#8ab4f8;">T1566.002</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#bdc1c6;">Spearphishing Link</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#9aa0a6;">Initial Access</td></tr>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#8ab4f8;">T1598.003</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#bdc1c6;">Spearphishing Link</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#9aa0a6;">Reconnaissance</td></tr>
+                  <tr><td style="padding:13px 24px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#8ab4f8;">T1056.003</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#bdc1c6;">Web Portal Capture</td><td style="padding:13px 24px; border-top:1px solid #3c4043; color:#9aa0a6;">Collection</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- side column -->
+          <div style="display:flex; flex-direction:column; gap:18px;">
+            <div style="background:#2d2e31; border:1px solid #3c4043; border-radius:8px; padding:20px 22px;">
+              <div style="font-size:0.9rem; font-weight:500; color:#e8eaed; margin-bottom:14px;">Recommended actions</div>
+              <ol style="margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:12px;">
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#bdc1c6; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">01</span>Block the domain at the DNS and proxy layer</li>
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#bdc1c6; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">02</span>Reset credentials for affected users</li>
+                <li style="display:flex; gap:11px; font-size:0.88rem; color:#bdc1c6; line-height:1.45;"><span style="font-family:'Roboto Mono',monospace; font-size:0.75rem; color:#80868b;">03</span>Hunt for related Emotet indicators</li>
+              </ol>
+            </div>
+            <div style="background:#2d2e31; border:1px solid #3c4043; border-radius:8px; padding:20px 22px;">
+              <div style="font-size:0.78rem; color:#9aa0a6; margin-bottom:8px;">Related malware</div>
+              <div style="display:flex; flex-wrap:wrap; gap:7px; margin-bottom:16px;">
+                <span style="padding:4px 10px; border-radius:6px; background:rgba(242,139,130,.16); color:#f28b82; font-size:0.8rem;">Emotet</span>
+                <span style="padding:4px 10px; border-radius:6px; background:rgba(242,139,130,.16); color:#f28b82; font-size:0.8rem;">IcedID</span>
+              </div>
+              <div style="font-size:0.78rem; color:#9aa0a6; margin-bottom:8px;">Threat group</div>
+              <span style="padding:4px 10px; border-radius:6px; background:rgba(138,180,248,.16); color:#8ab4f8; font-size:0.8rem;">TA577</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FRAME 6 : LIVE FEED — DARK ============ -->
+<div style="position:absolute; left:0px; top:3060px; width:1200px;">
+  <div data-drags-parent="1" style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font:600 13px/1 'Inter',sans-serif; color:#52525b;">
+    <span style="display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border-radius:5px; background:#202124; color:#8ab4f8; font-size:13px; border:1px solid #3c4043;">▤</span>
+    LIVE FEED — dark, Material-style, original
+  </div>
+
+  <div style="border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.3); overflow:hidden; background:#202124; color:#e8eaed; font-family:'Roboto','Inter',system-ui,sans-serif;">
+
+    <!-- app bar -->
+    <div style="display:flex; align-items:center; gap:18px; height:60px; padding:0 22px; border-bottom:1px solid #3c4043; background:#2d2e31;">
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; border-radius:7px; background:#8ab4f8; color:#202124; font-weight:600; font-size:14px;">TI</span>
+        <span style="font-size:1.05rem; font-weight:500; color:#e8eaed;">Threat Intel</span>
+      </div>
+      <div style="flex:1; max-width:520px; display:flex; align-items:center; gap:10px; background:#3c4043; border-radius:8px; padding:9px 14px; color:#9aa0a6; font-size:0.9rem;">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#9aa0a6" stroke-width="1.6"><circle cx="7" cy="7" r="5"></circle><line x1="11" y1="11" x2="14.5" y2="14.5"></line></svg>
+        Search indicators, reports, detections
+      </div>
+      <div style="margin-left:auto; display:flex; align-items:center; gap:16px;">
+        <span style="font-size:0.85rem; color:#9aa0a6;">SOC · Tier 2</span>
+        <span style="display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:999px; background:rgba(138,180,248,.2); color:#8ab4f8; font-weight:600; font-size:0.85rem;">AK</span>
+      </div>
+    </div>
+
+    <div style="display:flex; min-height:560px;">
+
+      <!-- left nav rail -->
+      <nav style="width:230px; flex-shrink:0; border-right:1px solid #3c4043; padding:16px 12px; background:#2d2e31;">
+        <div style="font-size:0.72rem; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#80868b; padding:6px 14px 10px;">Operations</div>
+        <div style="display:flex; flex-direction:column; gap:2px;">
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><rect x="2" y="2" width="6" height="6" rx="1"></rect><rect x="10" y="2" width="6" height="6" rx="1"></rect><rect x="2" y="10" width="6" height="6" rx="1"></rect><rect x="10" y="10" width="6" height="6" rx="1"></rect></svg>Dashboard</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.6"><circle cx="8" cy="8" r="5"></circle><line x1="12" y1="12" x2="16" y2="16"></line></svg>Investigate</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; background:rgba(138,180,248,.16); color:#8ab4f8; font-weight:500; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#8ab4f8" stroke-width="1.6"><line x1="3" y1="5" x2="15" y2="5"></line><line x1="3" y1="9" x2="15" y2="9"></line><line x1="3" y1="13" x2="11" y2="13"></line></svg>Live feed</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><path d="M9 2 L16 15 L2 15 Z"></path><line x1="9" y1="7" x2="9" y2="11"></line></svg>Detections</div>
+          <div style="display:flex; align-items:center; gap:13px; padding:9px 14px; border-radius:999px; color:#bdc1c6; font-size:0.9rem;"><svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#9aa0a6" stroke-width="1.5"><rect x="3" y="3" width="12" height="12" rx="2"></rect><line x1="6" y1="7" x2="12" y2="7"></line><line x1="6" y1="11" x2="10" y2="11"></line></svg>Rules</div>
+        </div>
+      </nav>
+
+      <!-- content -->
+      <div style="flex:1; background:#202124; padding:24px 28px 30px; min-width:0;">
+        <div style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:#9aa0a6; margin-bottom:6px;">Live feed<span style="color:#5f6368;">/</span><span style="color:#e8eaed;">ThreatFox</span></div>
+        <h1 style="margin:0 0 20px; font-size:1.4rem; font-weight:500; color:#e8eaed; letter-spacing:-0.01em;">Live indicator feed</h1>
+
+        <!-- control bar -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; gap:24px; flex-wrap:wrap; margin-bottom:20px;">
+          <p style="margin:0; max-width:46ch; color:#bdc1c6; line-height:1.55; font-size:0.9rem;">Pull real, recent indicators from <span style="color:#8ab4f8;">abuse.ch ThreatFox</span>. Click any row to investigate it.</p>
+          <div style="display:flex; align-items:flex-end; gap:12px;">
+            <label style="display:flex; flex-direction:column; gap:6px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#9aa0a6;">days
+              <span style="width:4.5rem; background:#2d2e31; border:1px solid #3c4043; border-radius:6px; color:#e8eaed; padding:8px; font-family:'Roboto Mono',monospace;">1</span></label>
+            <label style="display:flex; flex-direction:column; gap:6px; font-size:0.72rem; text-transform:uppercase; letter-spacing:0.06em; color:#9aa0a6;">limit
+              <span style="width:4.5rem; background:#2d2e31; border:1px solid #3c4043; border-radius:6px; color:#e8eaed; padding:8px; font-family:'Roboto Mono',monospace;">10</span></label>
+            <span style="background:#8ab4f8; color:#202124; border-radius:8px; padding:9px 18px; font-weight:500; font-size:0.9rem;">Pull IOCs</span>
+          </div>
+        </div>
+
+        <!-- table -->
+        <div style="background:#2d2e31; border:1px solid #3c4043; border-radius:8px; overflow:hidden;">
+          <table style="width:100%; border-collapse:collapse; font-size:0.88rem;">
+            <thead><tr style="background:#292a2d;">
+              <th style="text-align:left; padding:12px 20px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Indicator</th>
+              <th style="text-align:left; padding:12px 20px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Type</th>
+              <th style="text-align:left; padding:12px 20px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Malware</th>
+              <th style="text-align:left; padding:12px 20px; color:#9aa0a6; font-weight:500; font-size:0.78rem;">Confidence</th>
+              <th style="padding:12px 20px;"></th>
+            </tr></thead>
+            <tbody>
+              <tr><td style="padding:13px 20px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#e8eaed;">185.220.101.47</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#9aa0a6;">IP address</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#bdc1c6;">Cobalt Strike</td><td style="padding:13px 20px; border-top:1px solid #3c4043;"><span style="display:flex; align-items:center; gap:8px;"><span style="width:56px; height:6px; background:#3c4043; border-radius:999px; overflow:hidden;"><span style="display:block; height:100%; width:90%; background:#8ab4f8;"></span></span><span style="font-family:'Roboto Mono',monospace; font-size:0.72rem; color:#9aa0a6;">90</span></span></td><td style="padding:13px 20px; border-top:1px solid #3c4043; text-align:right;"><span style="border:1px solid #5f6368; color:#8ab4f8; border-radius:6px; padding:6px 14px; font-size:0.82rem; white-space:nowrap;">Investigate →</span></td></tr>
+              <tr><td style="padding:13px 20px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#e8eaed;">cdn-update-server.net</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#9aa0a6;">Domain</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#bdc1c6;">IcedID</td><td style="padding:13px 20px; border-top:1px solid #3c4043;"><span style="display:flex; align-items:center; gap:8px;"><span style="width:56px; height:6px; background:#3c4043; border-radius:999px; overflow:hidden;"><span style="display:block; height:100%; width:75%; background:#8ab4f8;"></span></span><span style="font-family:'Roboto Mono',monospace; font-size:0.72rem; color:#9aa0a6;">75</span></span></td><td style="padding:13px 20px; border-top:1px solid #3c4043; text-align:right;"><span style="border:1px solid #5f6368; color:#8ab4f8; border-radius:6px; padding:6px 14px; font-size:0.82rem; white-space:nowrap;">Investigate →</span></td></tr>
+              <tr><td style="padding:13px 20px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#e8eaed;">3f9a1c4e…b27d</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#9aa0a6;">File hash</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#80868b;">—</td><td style="padding:13px 20px; border-top:1px solid #3c4043;"><span style="display:flex; align-items:center; gap:8px;"><span style="width:56px; height:6px; background:#3c4043; border-radius:999px; overflow:hidden;"><span style="display:block; height:100%; width:58%; background:#8ab4f8;"></span></span><span style="font-family:'Roboto Mono',monospace; font-size:0.72rem; color:#9aa0a6;">58</span></span></td><td style="padding:13px 20px; border-top:1px solid #3c4043; text-align:right;"><span style="border:1px solid #5f6368; color:#8ab4f8; border-radius:6px; padding:6px 14px; font-size:0.82rem; white-space:nowrap;">Investigate →</span></td></tr>
+              <tr><td style="padding:13px 20px; border-top:1px solid #3c4043; font-family:'Roboto Mono',monospace; color:#e8eaed;">login-verify-paypal.co</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#9aa0a6;">Domain</td><td style="padding:13px 20px; border-top:1px solid #3c4043; color:#bdc1c6;">Emotet</td><td style="padding:13px 20px; border-top:1px solid #3c4043;"><span style="display:flex; align-items:center; gap:8px;"><span style="width:56px; height:6px; background:#3c4043; border-radius:999px; overflow:hidden;"><span style="display:block; height:100%; width:82%; background:#8ab4f8;"></span></span><span style="font-family:'Roboto Mono',monospace; font-size:0.72rem; color:#9aa0a6;">82</span></span></td><td style="padding:13px 20px; border-top:1px solid #3c4043; text-align:right;"><span style="border:1px solid #5f6368; color:#8ab4f8; border-radius:6px; padding:6px 14px; font-size:0.82rem; white-space:nowrap;">Investigate →</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div></x-dc>
+</body>
+</html>

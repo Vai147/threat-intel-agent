@@ -1,0 +1,13 @@
+.git
+.venv
+venv
+__pycache__
+*.pyc
+.pytest_cache
+.env
+reports/
+frontend/node_modules
+frontend/dist
+design_handoff_dark_platform
+*.md
+!README.md

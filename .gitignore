@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.egg-info/
+.pytest_cache/
+reports/
+# Frontend
+frontend/node_modules/
+frontend/dist/
+design)handoff_dark_platform

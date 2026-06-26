@@ -1,0 +1,146 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.feed__bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.feed__lead {
+  margin: 0;
+  max-width: 46ch;
+  color: var(--text-dim);
+  line-height: 1.55;
+  font-size: 0.9rem;
+}
+.feed__lead a {
+  color: var(--accent);
+}
+
+.feed__controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+}
+.feed__num {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-faint);
+}
+.feed__num input {
+  width: 4.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text);
+  padding: 8px;
+  font-family: var(--font-mono);
+  transition: border-color var(--duration-fast);
+}
+.feed__num input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+.feed__load {
+  background: var(--accent);
+  color: #202124;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 18px;
+  font-weight: 500;
+  transition: filter var(--duration-fast);
+}
+.feed__load:hover:not(:disabled) {
+  filter: brightness(1.06);
+}
+.feed__load:disabled {
+  opacity: 0.5;
+}
+
+.feed__error {
+  color: var(--sev-critical);
+  background: var(--sev-critical-bg);
+  border: 1px solid var(--sev-critical);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+
+/* --- Table ---------------------------------------------------------------- */
+.feed-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.feed-table th {
+  text-align: left;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-faint);
+  padding: 12px 20px;
+  background: var(--surface-2);
+}
+.feed-table td {
+  padding: 13px 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.feed-table tbody tr {
+  transition: background var(--duration-fast);
+}
+.feed-table tbody tr:hover {
+  background: var(--surface-2);
+}
+.feed-table__ioc {
+  color: var(--text);
+  word-break: break-all;
+  max-width: 22rem;
+}
+.feed-table td.muted {
+  color: var(--text-faint);
+}
+.feed-table__action button {
+  background: transparent;
+  border: 1px solid var(--border-strong);
+  color: var(--accent);
+  border-radius: 6px;
+  padding: 6px 14px;
+  white-space: nowrap;
+  transition: background var(--duration-fast), border-color var(--duration-fast);
+}
+.feed-table__action button:hover {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.conf {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.conf__track {
+  width: 56px;
+  height: 6px;
+  background: var(--surface-3);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.conf__fill {
+  height: 100%;
+  background: var(--accent);
+}
+.conf__num {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+}

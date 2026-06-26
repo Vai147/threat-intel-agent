@@ -1,0 +1,72 @@
+:root {
+  /* Surfaces */
+  --bg: #202124; /* page / content area */
+  --surface: #2d2e31; /* cards, app bar, nav rail */
+  --surface-2: #292a2d; /* table header, insets */
+  --surface-3: #3c4043; /* neutral chip bg, search field */
+  --border: #3c4043; /* hairline borders */
+  --border-strong: #5f6368;
+
+  /* Text */
+  --text: #e8eaed;
+  --text-dim: #bdc1c6; /* body copy in cards */
+  --text-faint: #9aa0a6; /* secondary labels */
+  --text-muted: #80868b; /* tertiary / numerals */
+
+  /* Primary (Material blue 300) */
+  --accent: #8ab4f8;
+  --accent-soft: rgba(138, 180, 248, 0.16); /* active nav, blue chip bg */
+  --accent-avatar: rgba(138, 180, 248, 0.2);
+
+  /* Severity — Material dark 300-level hues + 16% tonal backgrounds */
+  --sev-critical: #f28b82;
+  --sev-critical-bg: rgba(242, 139, 130, 0.16);
+  --sev-high: #fcad70;
+  --sev-high-bg: rgba(252, 173, 112, 0.16);
+  --sev-medium: #fdd663;
+  --sev-medium-bg: rgba(253, 214, 99, 0.16);
+  --sev-low: #81c995;
+  --sev-low-bg: rgba(129, 201, 149, 0.16);
+  --sev-info: #8ab4f8;
+  --sev-info-bg: rgba(138, 180, 248, 0.16);
+  /* Back-compat alias (older code used --sev-informational) */
+  --sev-informational: var(--sev-info);
+  --sev-informational-bg: var(--sev-info-bg);
+
+  /* Typography */
+  --font-sans: "Roboto", system-ui, -apple-system, sans-serif;
+  --font-mono: "Roboto Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.85rem;
+  --text-base: 0.95rem;
+  --text-lg: 1.05rem;
+  --text-xl: 1.18rem;
+
+  /* Spacing rhythm */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  /* Shape */
+  --radius-chip: 6px;
+  --radius-sm: 6px;
+  --radius: 8px;
+  --radius-lg: 8px;
+  --radius-pill: 999px;
+
+  /* Chrome */
+  --appbar-h: 60px;
+  --rail-w: 230px;
+
+  /* Motion */
+  --duration-fast: 140ms;
+  --duration-normal: 240ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Elevation — flat Material, optional hairline shadow */
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
